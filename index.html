@@ -36,9 +36,9 @@ scheme地址:<textarea style="width:400px; height:300px" id="schemeUrl">mttbrows
 	setInterval(function () {
 	console.log("harryguo invoke interval hippy=" + (window.hippy ? hippy : null) + " __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
 		if (window.__REACT_WEB_VIEW_BRIDGE)
-			__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage");
+			__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage 2");
 		if (window.hippy)
-			hippy.postMessage("harryguo window.hippy");
+			hippy.postMessage("harryguo window.hippy 2");
 		},
 		1000);
 
