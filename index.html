@@ -14,23 +14,18 @@
 <body>
  
  
-<div>
-
 
 <script type="text/javascript">
-	console.log("harryguo invoke __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
+	console.log("harryguo invoke hippy=" + (window.hippy ? hippy : null) + " __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
 	if (window.__REACT_WEB_VIEW_BRIDGE)
 		__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage");
-	if (window.postMessage)
-		window.postMessage("harryguo window.postMessage");
 
 	setInterval(function () {
-		console.log("harryguo invoke interval __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
+		console.log("harryguo invoke interval hippy=" + (window.hippy ? hippy : null) + " __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
 		if (window.__REACT_WEB_VIEW_BRIDGE)
 			__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage 2");
-		if (window.postMessage)
-			window.postMessage("harryguo window.postMessage");
-	}, 1000);
+		},
+		1000);
 
 async function testAsync() {
     return "hello async";
