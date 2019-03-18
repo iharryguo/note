@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>hippy.postMessage()</title>
+    <title>hippy postMessage()</title>
   
 </head>
 
@@ -15,30 +15,21 @@
  
  
 <div>
-<div>
-scheme地址:<textarea style="width:400px; height:300px" id="schemeUrl">mttbrowser://url=https%3A%2F%2Fkuaibao.qq.com%2Fs%2F2017122501706500,encoded=1,PosID=4002,ChannelID=pull</textarea>
-</div>
-
-
-
-	<input type="button" onclick="openUrl();" value="打开"/>	
-</div>
-</div>
 
 
 <script type="text/javascript">
-	console.log("harryguo invoke hippy=" + (window.hippy ? hippy : null) + " __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
+	console.log("harryguo invoke __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
 	if (window.__REACT_WEB_VIEW_BRIDGE)
 		__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage");
-	if (window.hippy)
-		hippy.postMessage("harryguo hippy.postMessage");
+	if (window.postMessage)
+		window.postMessage("harryguo window.postMessage");
 
 	setInterval(function () {
-	console.log("harryguo invoke interval hippy=" + (window.hippy ? hippy : null) + " __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
+	console.log("harryguo invoke interval __REACT_WEB_VIEW_BRIDGE=" + (window.__REACT_WEB_VIEW_BRIDGE ? __REACT_WEB_VIEW_BRIDGE : null));
 		if (window.__REACT_WEB_VIEW_BRIDGE)
 			__REACT_WEB_VIEW_BRIDGE.postMessage("harryguo __REACT_WEB_VIEW_BRIDGE.postMessage 2");
-		if (window.hippy)
-			hippy.postMessage("harryguo window.hippy 2");
+	if (window.postMessage)
+		window.postMessage("harryguo window.postMessage");
 		},
 		1000);
 
