@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="monicaqin">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>mttbrowser协议测试</title>
+  
+</head>
+
+<body>
+ 
+ 
+<div>
+<div>
+scheme地址:<textarea style="width:400px; height:300px" id="schemeUrl">mttbrowser://url=https%3A%2F%2Fkuaibao.qq.com%2Fs%2F2017122501706500,encoded=1,PosID=4002,ChannelID=pull</textarea>
+</div>
+
+
+
+	<input type="button" onclick="openUrl();" value="打开"/>	
+</div>
+
+<script type="text/javascript">
+async function testAsync() {
+    return "hello async";
+}
+ 
+const result = testAsync();
+console.log(result);
+
+
+function call(){
+    console.log('call funtion');
+    return new Promise(resolve=>{
+        setTimeout(function(){
+            console.log('call funtion timeout');
+            resolve('dd');
+        },1000);        
+    });
+
+}
+function normalFunction() {
+    console.log('normalFunction');
+    return 'data'
+}
+// call(function(){
+//     console.log('callback');
+// });
+async function asynctest() {
+    console.log('start');
+	await result;
+    await call();
+    await normalFunction();
+    await new Promise(resolve=>{
+		console.log('wait result');
+		resolve();
+	});
+    console.log('end');
+}
+asynctest();
+
+
+
+
+function openUrl(){
+ location.href=schemeUrl.value;
+ localStorage.setItem('schemeUrl', schemeUrl.value);
+}
+
+var schemeUrlStr = localStorage.getItem('schemeUrl');
+if (schemeUrlStr) {
+ schemeUrl.value = schemeUrlStr;
+}
+
+
+</script>
+</body>
+</html>
